@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle de {{ persona?.nombre }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="persona">
+  <ion-card class="detalle-card">
+    <div class="detalle-container">
+      
+      <!-- LADO IZQUIERDO -->
+      <div class="info">
+        <h2>{{ persona.nombre }} {{ persona.apellido }}</h2>
+        <p class="profesion">{{ persona.profesion }}</p>
+
+        <ion-list>
+          <ion-item lines="none">
+            <ion-icon name="call-outline" slot="start"></ion-icon>
+            <ion-label>{{ persona.movil }}</ion-label>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-icon name="cash-outline" slot="start"></ion-icon>
+            <ion-label>${{ persona.salario | number:'1.0-0' }}</ion-label>
+          </ion-item>
+
+          <ion-item lines="none">
+           <ion-icon name="briefcase-outline" slot="start"></ion-icon>
+            <ion-label>{{ persona.profesion }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <!-- LADO DERECHO -->
+      <div class="imagen">
+        <img [src]="persona.imagen" alt="{{ persona.nombre }}" />
+      </div>
+    </div>
+  </ion-card>
+</ion-content>

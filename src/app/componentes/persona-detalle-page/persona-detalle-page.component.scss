@@ -1,0 +1,74 @@
+:host {
+  ion-content {
+    --background: #121212;
+    color: #ffffff;
+  }
+
+  ion-card.detalle-card {
+    background: #1e1e1e;
+    border-radius: 12px;
+    margin: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .detalle-container {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .info {
+    flex: 1 1 60%;
+  }
+
+  .info h2 {
+    font-size: 40px;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .info .profesion {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 16px;
+  }
+
+  ion-item {
+    --background: transparent;
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  ion-icon {
+    font-size: 40px;
+    color: #4c8dff;
+  }
+
+  .imagen {
+    flex: 1 1 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imagen img {
+    width:160px;
+    height: 160px;
+    object-fit:calc(100% - 32px) cover;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(255, 255, 255, 0.2);
+    border: 3px solid #333;
+  }
+
+  ion-title {
+    color: #ffffff;
+  }
+
+  ion-toolbar {
+    --background: #1e1e1e;
+  }
+}

@@ -1,0 +1,36 @@
+<ion-content class="ion-padding">
+    <ion-searchbar
+    animated="true"
+    [(ngModel)]="searchTerm"
+    (ionInput)="filtrarPersonas()"
+    placeholder="Buscar por nombre o apellido"
+    debounce="30">
+  </ion-searchbar>
+  <div class="persona-grid">
+      <ion-card class="persona-card" *ngFor="let persona of personasFiltradas" (click)="verDetalle(persona)">
+    <ion-item lines="none" class="card-header">
+      <ion-avatar slot="start">
+        <img [src]="persona.imagen" alt="{{ persona.nombre }} {{ persona.apellido }}" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ persona.nombre }} {{ persona.apellido }}</h2>
+        <p class="profesion">{{ persona.profesion }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-card-content>
+      <div class="info-line">
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+        <span>{{ persona.movil }}</span>
+      </div>
+      <div class="info-line">
+        <ion-icon name="cash-outline" slot="start"></ion-icon>
+        <span>${{ persona.salario | number: '1.0-0' }}</span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+  </div>
+
+</ion-content>

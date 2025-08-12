@@ -1,0 +1,7 @@
+{
+  "name": "ECO-BRUSH",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
