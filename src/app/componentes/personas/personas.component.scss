@@ -1,68 +1,103 @@
-
 .persona-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 16px;
-  
+  padding: 0; // Sin margen inicial
+  margin:0;
 
- 
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(76, 141, 255, 0.10);
 }
+
 .persona-card {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 16px;
-  transition: transform 0.2s ease-in-out;
+    padding: 0; // Sin margen inicial
+  margin:0;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #1e1e1e 60%, #2a2a72 100%);
+  box-shadow: 0 8px 32px rgba(76, 141, 255, 0.15), 0 2px 8px rgba(0,0,0,0.4);
+  border: 1px solid #4c8dff33;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 
   &:hover {
-    transform: scale(1.01);
-    border: #3880ff solid 1px;
+    transform: scale(1.04);
+    box-shadow: 0 12px 40px rgba(76, 141, 255, 0.25);
+    border-color: #ffb347;
+    
+    
   }
 
-
   ion-item.card-header {
-    --inner-padding-end: 0;
-    --padding-start: 12px;
     --min-height: 80px;
+   
+    border-bottom: 1px solid #4c8dff22;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 
     h2 {
       margin: 0;
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #4c8dff;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px #000a;
     }
 
     .profesion {
-      font-size: 0.9rem;
-      color: #666;
+      font-size: 1rem;
+      color: #fff;
+      font-style: italic;
+      opacity: 0.85;
+      margin-left: 8px;
     }
   }
 
   ion-avatar {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
+    box-shadow: 0 4px 24px rgba(76, 141, 255, 0.25), 0 2px 12px rgba(255,255,255,0.12);
+    border: 3px solid #4c8dff;
+    background: linear-gradient(135deg, #4c8dff22 0%, #232526 100%);
+    transition: box-shadow 0.2s, border-color 0.2s;
 
     img {
       border-radius: 50%;
       object-fit: cover;
+      width: 100%;
+      height: 100%;
+      transition: box-shadow 0.2s;
+    }
+
+    &:hover {
+      box-shadow: 0 8px 32px #ffb34788;
+      border-color: #ffb347;
     }
   }
 
   ion-card-content {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     padding-top: 0;
 
     .info-line {
       display: flex;
       align-items: center;
-      font-size: 0.95rem;
-      color: #444;
+      font-size: 1.05rem;
+      color: #e0e0e0;
+      text-shadow: 0 1px 4px #000a;
 
       ion-icon {
-        font-size: 1.2rem;
-        margin-right: 8px;
-        color: #3880ff;
+        font-size: 1.5rem;
+        margin-right: 10px;
+        color: #4c8dff;
+        filter: drop-shadow(0 2px 6px #4c8dff88);
+        transition: color 0.2s;
+        &:hover {
+          color: #ffb347;
+          filter: drop-shadow(0 2px 12px #ffb34788);
+        }
       }
     }
   }
